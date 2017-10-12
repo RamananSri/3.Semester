@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="53a2211a-80bf-4e55-ae4e-f65389edab29" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/ServiceLayer/BikeService/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="68b8a6e2-3d9f-4796-bdb9-a6939ec8736e" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ServiceLayer/BikeService/?xsd=xsd0" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="426e8725-7d18-43d4-bcee-85a5de1b0dcd" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ServiceLayer/BikeService/?disco" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="97bd0371-7c41-4e89-a9c8-327a3a20987c" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ServiceLayer/BikeService/?xsd=xsd2" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="300cadc2-b746-4130-89ca-8a4eb6b97703" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ServiceLayer/BikeService/?xsd=xsd1" />
+    <MetadataFile FileName="BikeService.wsdl" MetadataType="Wsdl" ID="0e844478-97e4-4764-846d-a31907bbf813" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ServiceLayer/BikeService/?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

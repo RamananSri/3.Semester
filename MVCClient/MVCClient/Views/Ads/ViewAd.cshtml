@@ -1,0 +1,92 @@
+﻿@using MVCClient.Service
+@model Advertisement
+
+@{
+    ViewBag.Title = "ViewAd";
+    var id = Session["ID"];
+
+    if (id == null)
+    {
+        Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    Advertisement a = Model;
+
+}
+
+
+<h2>ViewBtnClicked</h2>
+<div class="panel panel-info ">
+    <div class="panel-heading">
+        <h4 class="panel-title">Advertise info</h4>
+    </div>
+    <div>   
+        <ul class="panel-body col-lg-2">
+            <li>Title:</li>
+            <li>Description:</li>
+            <li>Price:</li>
+            <li>Start date:</li>
+            <li>End date:</li>
+            <li>Bike year:</li>
+            <li>Brand:</li>
+            <li>Framesize:</li>
+            <li>Type:</li>
+            <li>Wheelsize:</li>
+        </ul>
+        <ul class="panel-body col-lg-10">
+            <li>@a.Title</li>
+            <li>@a.Description</li>
+            <li id="adPrice">@a.Price</li>
+            <li>@a.StartDate</li>
+            <li>@a.EndDate</li>
+            <li>@a.Bike.Year</li>
+            <li>@a.Bike.Brand.Name</li>
+            <li>@a.Bike.FrameSize.Size</li>
+            <li>@a.Bike.Type.TypeName</li>
+            <li>@a.Bike.WheelSize.Size</li>
+        </ul>
+    </div>
+
+@using (Html.BeginForm("CreateBooking", "Booking", new { ID = a.Id }, FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="inputSDate">Start date: </label>
+        <input type="date" class="form-control" id="inputSDate" name="inputSDate" onchange="EnableEndDate()">
+    </div>
+    <div class="form-group">
+        <label for="inputEDate">End date: </label>
+        <input type="date" class="form-control" id="inputEDate" onchange="myFunction()" name="inputEDate" disabled>
+    </div>
+    <p id="hej"></p>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-default">Book</button>
+    </div>
+}
+
+</div>
+
+<script>
+
+    function EnableEndDate() {
+        document.getElementById("inputEDate").disabled = false;
+    }
+
+    function myFunction() {
+        var x = document.getElementById("inputEDate").value;
+        var y = document.getElementById("inputSDate").value;
+//        var adPrice = document.getElementById("adPrice").value;
+        var millisecondsPerDay = 24 * 60 * 60 * 1000;
+
+        var diff = Math.floor((Date.parse(x) - Date.parse(y)) / millisecondsPerDay) + 1;
+        if (diff <= 0) {
+            alert("Date error");
+        } else {
+            document.getElementById("hej").innerHTML = diff * parseFloat("@a.Price".replace(",", "."));
+        }
+    }
+</script>

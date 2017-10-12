@@ -1,0 +1,57 @@
+﻿@using MVCClient.Service
+@model IEnumerable<MVCClient.Service.Bicycle>
+
+
+@{
+    ViewBag.Title = "ViewBikes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ViewBikes</h2>
+
+<!-- Table med alle userens cykler-->
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>    <!-- kolonne navne-->
+                <th>ID</th>
+                <th>Brand</th>
+                <th>Type</th>
+                <th>Year</th>
+                <th>Wheel size</th>
+                <th>Frame size</th>
+                <th> </th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Opretter en række for hver cykel useren har-->
+            @foreach (var bike in Model)
+                {
+                    <tr>
+                        <!-- Celle værdier-->
+                        <td>@bike.ID.ToString()</td>
+                        <th>@bike.Brand.Name</th>
+                        <th>@bike.Type.TypeName</th>
+                        <th>@bike.Year</th>
+                        <th>@bike.WheelSize.Size</th>
+                        <th>@bike.FrameSize.Size</th>
+                        <th>
+                            <!-- Opdater knap inde i celle. Sender ID på cykel med i action til controller-->
+                            <input type="button" class="btn btn-primary btn-lg" value="Update" onclick="location.href='@Url.Action("UpdateBike", "bike", new {ID = @bike.ID.ToString()})'" />
+                        </th>
+                        <th>
+                            <input type="button" class="btn btn-primary btn-lg" value="Delete" onclick="location.href='@Url.Action("DeleteBike", "bike", new {ID = @bike.ID})'" />
+                        </th>
+                    </tr>
+                }
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <input type="button" class="btn btn-primary btn-lg" value="Create" onclick="location.href='@Url.Action("CreateBike", "bike")'" />
+@*    <input type="button" class="btn btn-primary btn-lg" value="Update" onclick="location.href='@Url.Action("UpdateBike", "bike")'" />*@
+    
+</div>

@@ -1,0 +1,42 @@
+﻿<Page x:Class="WPFClient.Advertisements.CreateAdPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFClient.Advertisements"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="700"
+      Title="CreateAdPage">
+
+    <Grid>
+        <Button x:Name="Cancel" Content="Cancel" HorizontalAlignment="Left" Margin="454,319,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
+        <Button x:Name="Create" Content="Create" HorizontalAlignment="Left" Margin="556,319,0,0" VerticalAlignment="Top" Width="75" Click="Create_Click"/>
+        <TextBox x:Name="txtTitle" HorizontalAlignment="Left" Height="23" Margin="182,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label" Content="Title" HorizontalAlignment="Left" Margin="63,79,0,0" VerticalAlignment="Top" Height="27" Width="114"/>
+        <Label x:Name="label1" Content="Description&#xD;&#xA;" HorizontalAlignment="Left" Margin="369,83,0,0" VerticalAlignment="Top" Width="114" Height="27"/>
+        <Label x:Name="label1_Copy" Content="Price/day&#xA;" HorizontalAlignment="Left" Margin="63,115,0,0" VerticalAlignment="Top" Width="114" Height="27"/>
+        <Label x:Name="label1_Copy1" Content="Start date&#xA;" HorizontalAlignment="Left" Margin="63,147,0,0" VerticalAlignment="Top" Width="114" Height="27"/>
+        <Label x:Name="label1_Copy2" Content="End date&#xA;" HorizontalAlignment="Left" Margin="63,179,0,0" VerticalAlignment="Top" Width="114" Height="27"/>
+        <Label x:Name="label1_Copy3" Content="Bike&#xA;" HorizontalAlignment="Left" Margin="63,211,0,0" VerticalAlignment="Top" Width="114" Height="27"/>
+        <ComboBox x:Name="BikeComboBox" SelectedValuePath="ID" SelectedValue = "{Binding Path=ID}" HorizontalAlignment="Left" Margin="182,216,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    
+                    <TextBlock>
+                        <Run Text="{Binding Brand.Name}" />
+                        <Run Text="{Binding Type.TypeName}" />
+                        <Run Text="{Binding WheelSize.Size}" />
+                        <Run Text="{Binding FrameSize.Size}" />
+                    </TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <DatePicker Name="dpEDate" HorizontalAlignment="Left" Margin="182,182,0,0" VerticalAlignment="Top" Width="120"/>
+        <DatePicker Name="dpSDate" HorizontalAlignment="Left" Margin="182,149,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Height="23" Margin="182,119,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtDesc" HorizontalAlignment="Left" Height="119" Margin="375,119,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="262"/>
+        <Label x:Name="label2" Content="Create advertisement" HorizontalAlignment="Left" Margin="63,30,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+
+
+    </Grid>
+</Page>

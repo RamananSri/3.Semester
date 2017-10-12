@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "ViewBtnClicked";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ViewBtnClicked</h2>
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h4 class="panel-title">Advertise info</h4>
+    </div>
+    <div>
+        <ul class="panel-body col-lg-2">
+            <li>Title:</li>
+            <li>Description:</li>
+            <li>Price:</li>
+            <li>Start date:</li>
+            <li>End date:</li>
+            <li>Bike year:</li>
+            <li>Brand:</li>
+            <li>Framesize:</li>
+            <li>Type:</li>
+            <li>Wheelsize:</li>
+        </ul>
+        <ul class="panel-body col-lg-10">
+            <li>@Model.Title</li>
+            <li>@Model.Description</li>
+            <li>@Model.Price</li>
+            <li>@Model.StartDate</li>
+            <li>@Model.EndDate</li>
+                        <li>@Model.Bike.Year</li>
+                        <li>@Model.Bike.Brand.Name</li>
+                        <li>@Model.Bike.FrameSize.Size</li>
+                        <li>@Model.Bike.Type.TypeName</li>
+                        <li>@Model.Bike.WheelSize.Size</li>
+        </ul>
+    </div>
+</div>
+

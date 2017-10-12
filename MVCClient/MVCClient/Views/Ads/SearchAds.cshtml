@@ -1,0 +1,98 @@
+﻿
+@using MVCClient.Service
+@model IEnumerable<MVCClient.Service.Advertisement>
+
+@{
+    ViewBag.Title = "SearchAds";
+
+    var id = Session["ID"];
+
+    if (id == null)
+    {
+        Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+
+<h2>SearchAds</h2>
+
+<p>
+@*    @Html.ActionLink("Create New", "Create")*@
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Bike.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserID)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (Advertisement item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bike.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserID)
+            </td>
+            <td>
+                @Html.ActionLink("View", "ViewAd", new { ID = item.Id})
+
+                @*            @Html.ActionLink("Details", "Details", new { id=item.Id }) |*@
+                @*            @Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
+            </td>
+        </tr>
+    }
+
+</table>
+
+@using (Html.BeginForm("AvailableSearch", "Ads", FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="inputSDate">Start date: </label>
+        <input type="date" class="form-control" id="inputSDate" name="inputSDate">
+    </div>
+    <div class="form-group">
+        <label for="inputEDate">End date: </label>
+        <input type="date" class="form-control" id="inputEDate" name="inputEDate">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-default">Search</button>
+    </div>
+}

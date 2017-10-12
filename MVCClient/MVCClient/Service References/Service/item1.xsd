@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/ModelLayer" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ModelLayer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8733/Design_Time_Addresses/ServiceLayer/BikeService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="Bicycle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdsList" nillable="true" type="tns:ArrayOfAdvertisement" />
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="tns:Brand" />
+      <xs:element minOccurs="0" name="BrandId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FrameSize" nillable="true" type="tns:Frame" />
+      <xs:element minOccurs="0" name="FrameSizeId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="tns:BicycleType" />
+      <xs:element minOccurs="0" name="TypeId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      <xs:element minOccurs="0" name="WheelSize" nillable="true" type="tns:Wheel" />
+      <xs:element minOccurs="0" name="WheelSizeId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Year" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Bicycle" nillable="true" type="tns:Bicycle" />
+  <xs:complexType name="ArrayOfAdvertisement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Advertisement" nillable="true" type="tns:Advertisement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdvertisement" nillable="true" type="tns:ArrayOfAdvertisement" />
+  <xs:complexType name="Advertisement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bike" nillable="true" type="tns:Bicycle" />
+      <xs:element minOccurs="0" name="BikeId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Bookings" nillable="true" type="tns:ArrayOfBooking" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Price" type="xs:double" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Advertisement" nillable="true" type="tns:Advertisement" />
+  <xs:complexType name="ArrayOfBooking">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Booking" nillable="true" type="tns:Booking" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBooking" nillable="true" type="tns:ArrayOfBooking" />
+  <xs:complexType name="Booking">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Advertisement" nillable="true" type="tns:Advertisement" />
+      <xs:element minOccurs="0" name="AdvertismentId" type="xs:int" />
+      <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="RentUser" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="RentUserId" type="xs:int" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TotalPrice" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Booking" nillable="true" type="tns:Booking" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Advertisements" nillable="true" type="tns:ArrayOfAdvertisement" />
+      <xs:element minOccurs="0" name="Age" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Bicycles" nillable="true" type="tns:ArrayOfBicycle" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PWord" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Salt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zipcode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfBicycle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Bicycle" nillable="true" type="tns:Bicycle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBicycle" nillable="true" type="tns:ArrayOfBicycle" />
+  <xs:complexType name="Brand">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Brand" nillable="true" type="tns:Brand" />
+  <xs:complexType name="Frame">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Size" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Frame" nillable="true" type="tns:Frame" />
+  <xs:complexType name="BicycleType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="TypeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BicycleType" nillable="true" type="tns:BicycleType" />
+  <xs:complexType name="Wheel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Size" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Wheel" nillable="true" type="tns:Wheel" />
+  <xs:complexType name="ArrayOfBrand">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Brand" nillable="true" type="tns:Brand" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBrand" nillable="true" type="tns:ArrayOfBrand" />
+  <xs:complexType name="ArrayOfWheel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Wheel" nillable="true" type="tns:Wheel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWheel" nillable="true" type="tns:ArrayOfWheel" />
+  <xs:complexType name="ArrayOfFrame">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Frame" nillable="true" type="tns:Frame" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFrame" nillable="true" type="tns:ArrayOfFrame" />
+  <xs:complexType name="ArrayOfBicycleType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BicycleType" nillable="true" type="tns:BicycleType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBicycleType" nillable="true" type="tns:ArrayOfBicycleType" />
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+</xs:schema>

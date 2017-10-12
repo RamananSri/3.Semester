@@ -1,0 +1,90 @@
+﻿@model MVCClient.ViewModel.DropdownDetails
+@{
+    ViewBag.Title = "CreateBike";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    <h2>Create bicycle</h2>
+
+    <form method="post" class="form-horizontal">
+
+        <!--Whitespace-->
+        <div class="col-xs-12" style="height: 50px;"></div>
+
+
+
+
+
+        <!--Types - Label + dropdown-->
+        @*<div class="form-group">
+                <label class="control-label col-sm-2">Type</label>
+                <select class="form-control" id="sel1" name="sel1">
+                    @foreach (var type in Model.Types)
+                    {
+                        <option>@type.Text</option>
+                    }
+                </select>
+
+
+            </div>*@
+
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="dropDownType">Type</label>
+            <div class="col-sm-10" id="dropDownType">
+                @Html.DropDownListFor(t => t.SelectedType.Id, Model.Types, "", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <!--Brands - Label + dropdown-->
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="dropDownBrand">Brand</label>
+            <div class="col-sm-10" id="dropDownBrand">
+                @Html.DropDownListFor(t => t.SelectedBrand.Id, Model.Brands, "", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <!--Year - Label + input-->
+        <div class="form-group">
+            <label class="control-label col-sm-2">Year:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="year" name="year">
+            </div>
+        </div>
+
+        <!--WheelSize - Label + dropdown-->
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="dropDownWheelsize">Wheel Size</label>
+            <div class="col-sm-10" id="dropDownWheelsize">
+                @Html.DropDownListFor(t => t.SelectedWheel.Id, Model.Wheels, "", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <!--FrameSize - Label + dropdown-->
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="dropDownFramesize">Frame Size</label>
+            <div class="col-sm-10" id="dropDownFramesize">
+                @Html.DropDownListFor(t => t.SelectedFrame.Id, Model.Frames, "", new { @class = "form-control" })
+            </div>
+        </div>
+
+@*        <div>*@
+@*            <input type="button" class="btn btn-primary btn-lg" value="Create" onclick="location.href='@Url.Action("CreateBike", "bike")'" />*@
+@*        </div>*@
+
+        <!--Create knap-->
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary btn-lg">Create</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<script language="javascript">
+
+
+</script>

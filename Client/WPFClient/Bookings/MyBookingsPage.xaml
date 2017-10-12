@@ -1,0 +1,33 @@
+﻿<Page x:Class="WPFClient.Bookings.MyBookingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFClient.Bookings"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="700"
+      Title="MyBookingsPage">
+   
+
+    <Grid>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="338" Margin="10,17,0,0" VerticalAlignment="Top" Width="462">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Start date" Width="auto" DisplayMemberBinding="{Binding StartDate}"/>
+                    <GridViewColumn Header="End date" Width="auto" DisplayMemberBinding="{Binding EndDate}"/>
+                    <GridViewColumn Header="Price" Width="auto" DisplayMemberBinding="{Binding TotalPrice}"/>
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Delete" Click="DeleteBtnClicked"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                   
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="590,448,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click"/>
+
+    </Grid>
+</Page>

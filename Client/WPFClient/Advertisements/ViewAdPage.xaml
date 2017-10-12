@@ -1,0 +1,43 @@
+﻿<Page x:Class="WPFClient.Advertisements.ViewAdPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFClient.Advertisements"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="700"
+      Title="ViewAdPage">
+
+    <Grid>
+        <Label x:Name="lblTitle" Content="" HorizontalAlignment="Left" Margin="230,35,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label x:Name="lblDesc" Content="" HorizontalAlignment="Left" Margin="230,77,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label x:Name="lblPrice" Content="" HorizontalAlignment="Left" Margin="230,120,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label x:Name="lblSDate" Content="" HorizontalAlignment="Left" Margin="230,167,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label x:Name="lblEDate" Content="" HorizontalAlignment="Left" Margin="230,211,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label x:Name="lblType" Content="" HorizontalAlignment="Left" Margin="530,35,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label x:Name="lblYear" Content="" HorizontalAlignment="Left" Margin="530,211,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label x:Name="lblBrand" Content="" HorizontalAlignment="Left" Margin="530,77,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label x:Name="lblWheel" Content="" HorizontalAlignment="Left" Margin="530,120,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label x:Name="lblFrame" Content="" HorizontalAlignment="Left" Margin="530,167,0,0" VerticalAlignment="Top" Width="114"/>
+        <Button x:Name="btnBook" Content="Book" HorizontalAlignment="Left" Margin="559,450,0,0" VerticalAlignment="Top" Width="101" Click="btnBook_Click"/>
+        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="35,450,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click" RenderTransformOrigin="0.05,-0.505"/>
+        <Label x:Name="lblTypeInfo" Content="Type: " HorizontalAlignment="Left" Margin="424,35,0,0" VerticalAlignment="Top" Width="87"/>
+        <Label x:Name="lblTitleInfo" Content="Title: " HorizontalAlignment="Left" Margin="86,35,0,0" VerticalAlignment="Top" Width="116"/>
+        <Label x:Name="lblDescInfo" Content="Description: " HorizontalAlignment="Left" Margin="86,77,0,0" VerticalAlignment="Top" Width="116"/>
+        <Label x:Name="lblPriceInfo" Content="Price pr. day: " HorizontalAlignment="Left" Margin="88,120,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label x:Name="lblSDateInfo" Content="Start Date: " HorizontalAlignment="Left" Margin="88,167,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label x:Name="lblEDateInfo" Content="End Date: " HorizontalAlignment="Left" Margin="88,211,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label x:Name="lblBrandInfo" Content="Brand: " HorizontalAlignment="Left" Margin="424,77,0,0" VerticalAlignment="Top" Width="87"/>
+        <Label x:Name="lblWheelInfo" Content="WheelSize: " HorizontalAlignment="Left" Margin="424,120,0,0" VerticalAlignment="Top" Width="87"/>
+        <Label x:Name="lblFrameInfo" Content="FrameSize: " HorizontalAlignment="Left" Margin="424,167,0,0" VerticalAlignment="Top" Width="87"/>
+        <Label x:Name="lblYearInfo" Content="Year: " HorizontalAlignment="Left" Margin="424,211,0,0" VerticalAlignment="Top" Width="87"/>
+        <DatePicker Name="dpSDate" HorizontalAlignment="Left" Margin="559,320,0,0" VerticalAlignment="Top"/>
+        <DatePicker Name="dpEDate" HorizontalAlignment="Left" Margin="559,366,0,0" VerticalAlignment="Top" CalendarClosed="DpEDate_OnCalendarClosed"/>
+        <Label x:Name="lblTotalPriceInfo" Content="Total price:" HorizontalAlignment="Left" Margin="480,404,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblLoading" Content="" HorizontalAlignment="Left" Margin="210,265,0,0" VerticalAlignment="Top" Height="60" Width="275" FontSize="36"/>
+        <Label x:Name="lblStart" Content="Start" HorizontalAlignment="Left" Margin="480,319,0,0" VerticalAlignment="Top" Width="66"/>
+        <Label x:Name="lblEnd" Content="End" HorizontalAlignment="Left" Margin="480,366,0,0" VerticalAlignment="Top" Width="66"/>
+        <Label x:Name="lblTotal" Content="Label" HorizontalAlignment="Left" Margin="559,404,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.411,0.205" Width="101"/>
+
+    </Grid>
+</Page>

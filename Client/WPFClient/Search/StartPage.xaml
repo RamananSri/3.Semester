@@ -1,0 +1,25 @@
+﻿<Page x:Class="WPFClient.Search.StartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFClient.Search"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="700"
+      Title="StartPage">
+
+    <Grid>
+        <DockPanel FlowDirection="RightToLeft" Grid.ColumnSpan="2">
+            <Menu DockPanel.Dock="Top" Height="40" Name="menuDock">
+            </Menu>
+            <StackPanel Background="WhiteSmoke"></StackPanel>
+        </DockPanel>
+
+        <Label x:Name="label" Content="Bike n Bike" HorizontalAlignment="Left" Margin="250,145,0,0" VerticalAlignment="Top" Background="{x:Null}" FontSize="36" Height="58" Width="190"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Center" Height="23" Margin="250,262,260,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <Button x:Name="button" Content="Search" HorizontalAlignment="Left" Margin="280,335,0,0" VerticalAlignment="Top" Width="120" Click="SearchBtnClicked" Height="25"/>
+    </Grid>
+</Page>
+
+
+

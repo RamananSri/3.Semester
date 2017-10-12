@@ -1,0 +1,72 @@
+﻿@model IEnumerable<MVCClient.Service.Advertisement>
+
+@{
+    ViewBag.Title = "ViewAds";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+<h2>ViewAds</h2>
+
+<!-- Table med alle userens cykler-->
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <!-- kolonne navne-->
+            <th>ID</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th> </th>
+            <th> </th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Opretter en række for hver cykel useren har-->
+        @foreach (var ad in Model)
+        {
+             
+            <tr>
+                <!-- Celle værdier-->
+                <td>@ad.Id</td>
+                <td>@ad.Title</td>
+                <td>@ad.Price</td>
+                <td>
+                    <!-- Opdater knap inde i celle. Sender linje advertisement til controller-->
+                    <input type="button" class="btn btn-primary btn-xs" value="View" onclick="location.href='@Url.Action("ViewBtnClicked", "Ads", new { adId = ad.Id })'"/>
+                </td>
+                <th>
+                    <!-- Opdater knap inde i celle. Sender ID på cykel med i action til controller-->
+
+                    @using (Html.BeginForm("DeleteAd", "Ads", FormMethod.Post))
+                    {
+                        <div class="form-group">
+                            <input type="hidden" name="id" value="@ad.Id" />
+                            <button type="submit" class="btn btn-primary btn-xs">Delete</button>
+                        </div>
+                    }
+                </th>
+
+            </tr>
+        }
+
+        </tbody>
+    </table>
+    
+    <h2>@ViewBag.FaultEx</h2>
+
+</div>
+
+<div>
+    <input type="button" class="btn btn-primary btn-lg" value="Create" onclick="location.href='@Url.Action("CreateAd", "Ads")'" />
+
+</div>
+
+
+@* fuck det indtil videre :p *@
+@*<script>
+    function addIDToFrom(id) {
+        $("#DeleteAdForm").append('<input type="hidden" value="'+id+'"/>');
+    }
+</script>*@
