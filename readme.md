@@ -1,4 +1,4 @@
-#3rd Semester project
+# 3rd Semester project
 
 Bike renting platform similar to Airbnb. Platform based on WCF which is consumed by af WPF client and a ASP.NET MVC client.   
 
